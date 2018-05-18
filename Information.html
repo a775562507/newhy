@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新惠幼蒙特梭利幼兒教育事業 New Heyyow Montessori Pre-School</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <style>
+          @keyframes round {
+    10% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    50% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    60% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+     }
+
+        *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Arial, "微軟正黑體", Helvetica, sans-serif;
+        /* background: orange; */
+        position: relative;
+    }
+    li{
+        list-style: none;
+    }
+    .flex{
+        display: flex;
+    }
+    .header1{
+        width: 100%;
+      background: orange;
+      position: fixed;
+      top:0;
+      z-index: 5;
+     transition: all .5s;
+      box-shadow: 0 2px 10px black;
+    }
+    .header1.topmenu{
+         transform: translateY(-100%)
+    }
+    .logo{
+        flex: 1;
+        /* background: brown; */
+    }
+    .menu{
+        flex: 7;
+        /* background: burlywood; */
+        }
+    .fb{
+        flex: 1;
+        /* background: chocolate; */
+          justify-content: flex-end;
+         align-items: center;
+    }
+    .logo a{
+        display: block;
+    }
+    .logo img{
+       width:  100%;
+       /* margin: 10px; */
+       margin: 10px 0 10px 10px;
+    }
+    .menu ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        }
+    .menu ul li a{
+        text-decoration: none;
+        color: black;
+        padding: 20px;
+        /* margin: 0 10px 0 0; */
+        font-size: 24px;
+        transition: all .5s;
+        font-weight: 700;
+    }
+
+    .menu ul li a:hover{
+       background: #ff8000;
+       /* border-radius: 20px; */
+       /* border-bottom: 3px solid #000000; */
+       border-radius: 20px;
+    } 
+    .menu ul li{
+        /* margin: 20px; */
+    }
+    .left_menu{
+        margin-left: 30px;
+        /* background: #ff8000; */
+        border-radius: 20px;
+    }
+    .left_menu2{
+            background: #ff8000;
+             border-radius: 20px;
+    }
+   
+    .fb img{
+        width: 50px;
+        background: #fff;
+        border-radius: 10px;
+        justify-content: flex-end;
+        margin-right: 20px;
+        /* align-items: center; */
+    }
+    .button{
+       display: none;
+    }
+      
+     .mobile{
+         display: none;
+     } 
+    /* ----------------------------主圖--------------------- */
+
+    .section1{
+        width: 100%;
+        position: relative;
+        /* z-index: 3; */
+    }
+    .section1 img{
+        width: 100%;
+       /* position: absolute; */
+    }
+    .section11{
+        width: 100%;
+        /* z-index: 3; */
+        /* position: relative; */
+    }
+    .section11 img{
+        width: 100%;
+       position: absolute;
+       top:0;
+       opacity: 0;
+    filter: alpha(opacity=0);
+    animation: round 10s linear infinite;
+       /* z-index: 3; */
+    }
+    .imgdelay{
+         animation-delay: 5s;
+    }
+    .title{
+        font-size: 26px;
+        text-align: center;
+        margin: 30px 0;
+        /* color: #2f62f2;
+        background: orange; */
+    }
+
+ .cm{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .connection{
+        flex: 1;
+    }
+    .map{
+        flex: 1;
+    }
+    .connection p{
+        line-height: 40px;
+    }
+    .caution{
+        margin: 20px;
+        width: 60%;
+        display: block;
+        margin: 10px auto;
+    }
+    .caution img{
+        width: 100%;
+        border-radius: 20px;
+        /* margin: 0 auto; */
+    }
+    .map iframe{
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        height: 40vh;
+    }
+
+.footer{
+        clear: both;
+        width: 100%;
+        text-align: center;
+        margin: 30px 0 0 0;
+        background: orange;
+}
+.footer p{
+   padding: 20px;
+}
+
+
+
+     @media screen and (max-width:1100px){
+     .header1{
+            height: 60px;
+             position: fixed;
+            top:0;
+        }
+        .section1{
+            margin-top: 60px;
+        }
+        .logo{
+            width: 20%;
+        }
+        .logo a{
+            width: 100%;
+        }
+        .logo img{
+            display: block;
+            height: 60px;
+            margin: 0;
+        }
+        .button{
+            position: absolute;
+            width: 50px;
+             height: 50px;
+            display: block;
+            margin: 5px 10px;
+            right: 10px;
+            z-index: 100;
+            
+        }
+        .button a{
+            width: 100%;
+            display: block;
+        }
+        .button img{
+            width: 100%;
+        }
+        .menu{
+            display: none;
+        }
+        .fb{
+            display: none;
+        }
+     .title{
+         font-size: 22px;
+     }
+     .mobile{
+         display: block;
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         right: -100%;;
+         z-index: 50;
+         background: rgba(0,0,0,.8);
+         transition: all .5s;
+         
+     }
+     .mobile li{
+         
+         width: 100%;
+         margin: 50px 0;
+     }
+     .mobile li a{
+         width: 100%;
+         display: block;
+         text-align: center;
+         text-decoration: none;
+         color: #fff;
+         font-size: 50px;
+     }
+     
+     .menux{
+         width: 50px;
+         height: 30px;
+         display: block;
+         
+         /* background: forestgreen; */
+     }
+     .menux img{
+         float: right;
+         margin-right: 30px;
+         margin-top:-30px;
+width: 50px;
+ height: 50px;
+     }
+          .cm{
+            flex-direction: column;
+             width: 100%;
+           
+        }
+        .connection{
+           margin: 10px;
+        }
+        .map{
+        width: 100%;
+        }
+      .floatmenu{
+            display: none;
+        }
+
+
+ }
+   
+    
+    </style>
+</head>
+<body>
+    <header class="flex header1">
+    
+        <div class="logo">
+            <a href="index2.html">
+                <img src="images/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="menu flex">
+            <ul class="flex">
+                <li>
+                    <a href="index2.html" class="left_menu">首頁</a>
+                </li>
+                <li>
+                    <a href="about.html">關於新惠幼</a>
+                </li>
+                <li>
+                    <a href="class.html">新惠幼幼兒園</a>
+                </li>
+                <li>
+                    <a href="Information.html"  class="left_menu2">聯絡新惠幼</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fb flex">
+            <figure>
+                <a href="https://www.facebook.com/newheyyow?ref=hl" target="_blank">
+                    <img src="images/FB.svg" alt="">
+                </a>
+            </figure>
+        </div>
+        <div class="button">
+            <a>
+                <img src="images/menu-button.svg" alt="">
+            </a>
+        </div>
+    
+    </header>
+    
+    <div class="mobile">
+        <ul>
+            <li class="menux">
+    
+                <img class="buttonclose" src="images/close-x.svg" alt="">
+    
+    
+            </li>
+            <li>
+                <a href="index2.html">首頁</a>
+            </li>
+            <li>
+                <a href="about.html">關於新惠幼</a>
+            </li>
+            <li>
+                <a href="class.html">新惠幼幼兒園</a>
+            </li>
+            <li>
+                <a href="Information.html"  class="left_menu2">聯絡新惠幼</a>
+            </li>
+        </ul>
+    </div>
+    
+    <section class="section1">
+        <img src="images/main工作區域-1.png" alt="">
+    </section>
+    <section class="section11">
+        <img src="images/main工作區域-1.png" alt="">
+        <img class="imgdelay" src="images/mian02.png" alt="">
+    </section>
+
+
+
+
+        <section class="title wow bounceInUp">
+            <h2>聯絡新惠幼</h2>
+        </section>
+        <section class="flex cm">
+            <div class="connection  wow slideInLeft">
+        
+                <p>
+                    <span class="font_size">服務專線：</span>02-29209603
+                    <br>
+                    <span class="font_size">傳真專線：</span>02-22316947
+                    <br>
+                    <span class="font_size">惠幼地址：</span>234 新北市永和區保安路252巷2號1.2樓(鄰近仁愛公園)
+                    <br>
+                    <span class="font_size">FB 粉絲團：</span>
+                    <a class="astyle" href="https://www.facebook.com/newheyyow?ref=hl" target="_blank">https://www.facebook.com/newheyyow?ref=hl</a>
+                    <br>
+                    <span class="font_size"> Heyyow Montessori (惠幼):</span>heyyow@ms59.hinet.net
+                    <br>
+                    <span class="font_size">說明：</span>本校採預約參觀制，為了讓您充分瞭解我們的教學理念及課程安排，請您來電預約專屬參觀時間，(每場預計50分鐘），歡迎您的蒞臨！
+                    <br>
+                </p>
+                <a href="" class="caution">
+                    <img src="image/caution.gif" alt="">
+                </a>
+        
+        
+        
+        
+            </div>
+            <div class="map  wow slideInRight">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6294789244116!2d121.50382211554337!3d25.01270318398231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c43167028f%3A0x7b7967613e976e4!2z5paw5oOg5bm85omY5YWS5omA!5e0!3m2!1szh-TW!2stw!4v1519608283110"
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </section>      
+        <!-- 測試 -->
+        <footer class="footer">
+            <p>Copyright &copy; 2018 Heyyow All Rights Reserved. 電話：02-29209603 02-29238779 地址：新北市永和區保安路252巷2號1.2樓</p>
+        </footer>
+
+        <script src="js/jquery-3.3.1.js"></script></script>
+        <!-- <script src="WOW-master/dist/wow.min.js"></script> -->
+        <script>
+           var scrollheight = 0;
+            var scrolltop = 0;
+            //  new WOW().init();
+            $(window).scroll(function () {
+                scrollheight = scrolltop;
+                scrolltop = $(this).scrollTop();
+
+
+                if (scrolltop > scrollheight) {
+                    $(".header1").addClass("topmenu");
+                }
+                else {
+                    $(".header1").removeClass("topmenu");
+                }
+                console.log("scrolltop=" + scrolltop);
+                console.log("scrollheight=" + scrollheight);
+            })
+            $(".button").click(function () {
+                $(this).css("display", "none")
+                $(".mobile").css("right", "0")
+            })
+            $(".buttonclose").click(function () {
+                $(".button").css("display", "block")
+                $(".mobile").css("right", "-100%")
+            })
+        </script>
+</body>
+</html>

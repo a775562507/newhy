@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新惠幼蒙特梭利幼兒教育事業 New Heyyow Montessori Pre-School</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="vegas/vegas.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <style>
+        @keyframes animation {
+            0% {
+                top: 0vh;
+                opacity: 1;
+            }
+            30% {
+                top: 0vh;
+                opacity: 1;
+            }
+            40% {
+                top: 100vh;
+                opacity: 1;
+            }
+            41% {
+                top: 100vh;
+                opacity: 0;
+            }
+            42% {
+                top: -100vh;
+                opacity: 0;
+            }
+            80% {
+                top: -100vh;
+                opacity: 1;
+            }
+            90% {
+                top: 0vh;
+                opacity: 1;
+            }
+            100% {
+                top: 0vh;
+                opacity: 1;
+            }
+        }
+
+        @keyframes big {
+            0% {
+                transform: scale(1.01);
+                opacity: 1;
+            }
+            12.5% {
+                transform: scale(1.025);
+                opacity: 1;
+            }
+            22.5% {
+                transform: scale(1.045);
+                opacity: 1;
+            }
+            25% {
+                transform: scale(1.01);
+                opacity: 0;
+            }
+        }
+        
+         @keyframes textani {
+            0% {
+                left: -150px;
+                transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+         
+            /* 40% {
+                left: 120%;
+                transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            } */
+            100% {
+                left: 120%;
+                transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+        /* 版面設定 */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, "微軟正黑體", Helvetica, sans-serif
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flexdirection {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        li {
+            text-decoration: none;
+        }
+.shadow{
+            box-shadow: 0 0 5px black;
+        }
+        /* 版面設定結束 */
+
+        /* 主要輪播 */
+        .nodiv{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        header {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            transition: all .5s;
+            z-index: 3;
+        }
+
+        .main_slide {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .main_slide ul {
+            width: 100%;
+            height: 100vh;
+            top: 0vh;
+            left: 0;
+            transition: all .5s;
+            position: relative;
+        }
+
+        .main_slide ul li {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            animation: big 20s linear infinite;
+            opacity: 0;
+        }
+
+        .main_slide ul li img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .main_slide li:nth-child(4) {
+            animation-delay: 0;
+        }
+
+        .main_slide li:nth-child(3) {
+            animation-delay: 5s;
+        }
+
+        .main_slide li:nth-child(2) {
+            animation-delay: 10s;
+        }
+
+        .main_slide li:nth-child(1) {
+            animation-delay: 15s;
+        }
+
+        .col {
+            width: 100%;
+            height: 100vh;
+            background: #e58425;
+            position: absolute;
+            top: -100vh;
+            animation: animation 5s linear infinite;
+        }
+
+        .mainh5 {
+            font-size: 100px;
+            color: white;
+            position: relative;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 置中 */
+            text-align: center;
+            font-family: 'Indie Flower', cursive;
+            user-select: none;
+            /* 不可點文字 */
+        }
+
+        .movebox {
+            height: 100vh;
+            width: 30px;
+            position: absolute;
+            right: 0;
+        }
+
+        .down {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+
+        .move {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 0;
+            margin-top: -15px;
+        }
+
+        /* 主要輪播結束 */
+
+
+        .topmenu {
+            position: fixed;
+            height: 80px;
+            width: 100%;
+            /* background: firebrick; */
+            top: 0;
+            left: 0;
+        }
+
+        .topmenu li {
+            margin: 0 10px;
+        }
+
+        .logo {
+            height: 80px;
+            width: 200px;
+        }
+
+        .topmenu li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+            display: block;
+            line-height: 80px;
+        }
+
+        /* 第二區 */
+
+        .box1 {
+            /* background: yellowgreen; */
+            background: url(images/bg_08.jpg);
+            /* margin-top: 1vh; */
+            /* flex-direction: column; */
+        }
+
+        .flexdirectoridea {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items:center; */
+        }
+
+        .directoridea {
+            /* flex: 9; */
+            height: 100vh;
+            width: 100%;
+        }
+
+        .title {
+            flex: 1;
+            color: black;
+            font-size: 30px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .director {
+            flex: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .idea {
+            flex: 3;
+            /* color: black;
+            font-size: 24px; */
+            /* height: 20%; */
+            /* align-items: center; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            Object-fit: contain;
+        }
+
+        .idea p {
+            width: 80%;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .font_size {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        /* 第三頁 */
+
+        .box2 {
+            background: violet;
+            background: url(images/bg_09.jpg);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title2 {
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .subject {
+            flex: 8;
+            display: flex;
+        }
+
+        .BuildingBlocks {
+            flex: 1;
+            background: violet;
+        }
+
+        .Painted {
+            flex: 1;
+            background: teal;
+        }
+
+        .art {
+            flex: 1;
+            background: slateblue;
+        }
+
+        .boxbor {
+            margin: 0 20px 50px;
+            ;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, .1)
+        }
+
+        .imgborder {
+            border-radius: 20px ;
+        }
+
+        .text {
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .BuildingBlocks01 {
+            width: 100%;
+            flex: 1;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           position: relative;
+        z-index: 5;
+        overflow: hidden;
+        }
+       .BuildingBlocks01:after{
+        left: -150px;
+        top:-150px;
+        content:"";
+        background: rgba(255,255,255,.2);
+        position: absolute;;
+         width: 30px;
+        height: 500px;
+        z-index: 10;
+        transform: rotate(50deg);
+         /* transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1); */
+         animation: textani 2s cubic-bezier(0.19, 1, 0.22, 1) infinite ;
+    }
+   
+        .BuildingBlocks02 {
+            flex: 4;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+
+        /* 第三區 */
+
+        
+        .box3 {
+            background: teal;
+            background: url(images/bg_08.jpg);
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+        }
+        .title3{
+            flex:2;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+        .cm{
+            flex:12;
+            width: 95%;
+        }
+        .footer{
+            flex:1;
+            align-items: center;
+            justify-content: center;
+        }
+        .connection{
+            width: 100%;
+            padding-top: 50px;
+            margin: 0 auto;
+            /* justify-content: center; */
+        }
+        .map {
+            width: 100%;
+            height: 80%;
+        }
+        .map iframe{
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+
+        #information{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 50px;
+            height: 50px;
+            background: firebrick;
+            z-index: 100;
+            border-radius: 50%;
+            
+        }
+        #information a{
+            text-decoration: none;
+            color: white;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 50px;
+            transition: all 5s;
+            /* opacity:0; */
+        }
+        .advertisement{
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top:0;
+            left: 0;
+            background: rgba(0,0,0,.8);
+            display: none;
+            z-index: 200;
+        }
+        .adxx{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:30px;
+            right: 30px;
+        }
+        @media screen and (max-width:1100px){
+            .mainh5{
+                font-size: 80px;                
+            }
+            .down{
+                width: 50px;
+                height: 50px;
+            }
+
+            /* 第二頁 */
+
+           .box1{
+               display: block;
+           }
+           .title{
+               margin: 10px 0;
+           }
+           .idea p {
+            width: 95%;
+            margin: 20px 0;
+            }
+            
+            .Painted{
+                display: none;
+            }
+            .art{
+                display:none;
+            }
+            /* .BuildingBlocks02{
+                display:none;
+            } */
+        /* .box3 {
+display: block;
+
+        }             */
+            .cm{
+                flex-direction: column;
+            }
+            .connection{
+                padding-top: 0;
+            }
+            
+            .title3{
+            flex:1;
+        }
+        .cm{
+            flex:12;
+            width: 95%;
+        }
+        .footer{
+            flex:1;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .font_m{
+            font-size: 20px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <div class="section">
+            <div class="nodiv"></div>
+            <header class="header">
+                <div class="main_slide">
+                    <ul>
+
+                        <li>
+                            <img src="images/A20111208174341.jpg" alt="新惠幼場地">
+                        </li>
+                        <li>
+                            <img src="images/A20111215143519.jpg" alt="新惠幼場地">
+                        </li>
+                        <li>
+                            <img src="images/A20111215143642.jpg" alt="新惠幼場地">
+                        </li>
+                        <li>
+                            <img src="images/A20111215143822.jpg" alt="新惠幼場地">
+                        </li>
+                        <div class="col"></div>
+                        <h5 class="mainh5">Welcome to New Heyyow Montessori Pre-School</h2>
+                            <a class="down">
+                                <img src="images/chevron-down.svg" alt="">
+                            </a>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <div class="section box1 flexdirectoridea topbox2">
+            <div class="title wow bounce">
+                <h2 class="">新惠幼園長與教學理念</h2>
+            </div>
+
+            <div class="director">
+                <!-- <figure> -->
+                <img src="images/A20180119110704.jpg" alt="">
+                <!-- </figure> -->
+                <!-- <figure>
+                        <img src="images/A20150807062308.jpg" alt="">
+                    </figure> -->
+            </div>
+            <div class="idea">
+                <p>
+                    <span class="font_size">教育宗旨</span>
+                    <br>以信任和尊重的態度，依自然成長之法則，在有利於其建構自我心智的紀律下，給予孩子有選擇及重覆工作的自由，以幫助孩子正常發展。
+                    <br>
+                    <span class="font_size"> 教育精神</span>
+                    <br> 以謙虛的心及持續不斷的求知欲，從愛孩子、尊重孩子的角度出發，幫助孩子獨立完成每一件事。
+                    <br>
+                    <span class="font_size">教育目標</span>
+                    <br> 提供合乎兒童興趣且能促使他們專注的活動動機，以達到正常化─自發的紀律、持久而快樂的工作、助人憫人的社會情操。
+                    <br>
+                    <span class="font_size">師資團隊</span>
+                    <br> 二十年辦理幼兒教學經驗，每班編制一位主教老師及一位助理，均具幼教專業訓練基礎，主教老師並經650小時的蒙特梭利專業培訓結業，擁有蒙特梭利合格教師證書。
+                </p>
+            </div>
+
+
+        </div>
+        <div class="section box2 box">
+            <div class="title2">
+                <h2>新惠幼幼兒園</h2>
+            </div>
+            <div class="subject">
+                <div class="BuildingBlocks boxbor flexdirection shadow">
+                    <div class="flex1 imgborder" id="BuildingBlocks"></div>
+                    <div class="flex1 flexdirection text">
+                        <div class="BuildingBlocks01">積木課</div>
+                        <div class="BuildingBlocks02">藉由小小積木的堆疊，讓孩子開始用自己的眼睛並訓練自己的小肌肉來建構一個屬於自己的創作作品，這不僅訓練孩子空間的概念更讓孩子開始建構空間的邏輯，一個作品的完成不容易，學會欣賞其他人的作品，同儕間互相學習砥礪，提昇孩子們感知人事物的敏銳度。</div>
+                    </div>
+                </div>
+                <div class="Painted boxbor flexdirection shadow">
+                    <div class="flex1 imgborder" id="Painted"></div>
+                    <div class="flex1 flexdirection  text">
+                        <div class="BuildingBlocks01">彩繪課</div>
+                        <div class="BuildingBlocks02">彩繪課程滿足幼齡階段探索世界的渴望，藉由彩繪讓他們更大膽的嘗試世界色彩的美妙，這堂課不僅只有用筆，我們用更自己的全身來大膽嘗試的世界之美，藉由身體及肢體伸展，孩子們小小的心靈裡，更有著大大的勇氣。</div>
+                    </div>
+                </div>
+                <div class="art boxbor flexdirection shadow">
+                    <div class="flex1 imgborder" id="art"></div>
+                    <div class="flex1 flexdirection  text">
+                        <div class="BuildingBlocks01">美術課</div>
+                        <div class="BuildingBlocks02">藉由不同顏色的筆，開始描繪自己的想像力，在一張圖畫紙裡，可以運用自己的心情、感受來表達自己的想法，不再只是畫花畫草，我們用不同顏色的筆來琢磨自己的感受更能讓孩子們從畫中抒發自己的情感，一窺孩子內在豐富的世界。</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="section box3 box flexdirection">
+            <div class="title3 flex">
+                <h2>聯絡新惠幼</h2>
+            </div>
+            <div class="flex cm">
+                <div class="flex1 connection flex">
+                    <p>
+                        <span class="font_size">服務專線：</span>02-29209603
+                        <br>
+                        <span class="font_size">傳真專線：</span>02-22316947
+                        <br>
+                        <span class="font_size">惠幼地址：</span>234 新北市永和區保安路252巷2號1.2樓(鄰近仁愛公園)
+                        <br>
+                        <span class="font_size">FB 粉絲團：</span>
+                        <a class="astyle" href="https://www.facebook.com/newheyyow?ref=hl" target="_blank">https://www.facebook.com/newheyyow?ref=hl</a>
+                        <br>
+                        <span class="font_size"> Heyyow Montessori (惠幼):</span>heyyow@ms59.hinet.net
+                        <br>
+                        <span class="font_size">說明：</span>本校採預約參觀制，為了讓您充分瞭解我們的教學理念及課程安排，請您來電預約專屬參觀時間，(每場預計50分鐘），歡迎您的蒞臨！
+                        <br> 
+                        <br>
+                        <br>
+                        <span class="font_size font_m">幫寶貝選擇幼兒園是一件大事 透過新惠幼的各項活動，讓您和寶貝們更加瞭解蒙氏教育的理念和精神，歡迎您於參觀完學校後進一步報名我們為您和寶貝們安排的一系列課程。</span>
+                    </p>
+                </div>
+                <div class="flex1 map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6294789244116!2d121.50382211554337!3d25.01270318398231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c43167028f%3A0x7b7967613e976e4!2z5paw5oOg5bm85omY5YWS5omA!5e0!3m2!1szh-TW!2stw!4v1519608283110"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <footer class="footer flex">
+                <p>Copyright &copy; 2018 Heyyow All Rights Reserved. 電話：02-29209603 02-29238779 地址：新北市永和區保安路252巷2號1.2樓</p>
+            </footer>
+        </div>
+
+       
+
+    </div>
+<div id="information">
+    <a id="infoa" href="index2.html" target="_blank" data-box1="about.html" data-box2="class.html" data-box3="Information.html">
+        <h5>詳細+</h5>
+    </a>
+</div>
+    
+<div class="advertisement">
+    <img class="adxx" src="images/close-x.svg" alt="">
+    <img class="adimg" src="images/advertisement.jpg" alt="">
+</div>
+
+    <script src="js/jquery-3.3.1.js"></script></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+        crossorigin="anonymous"></script>
+    <script src="fullPage/jquery.fullPage.js"></script>
+    <script src="http://zeptojs.com/zepto.min.js"></script>
+    <script src="vegas/vegas.min.js"></script>
+    <!-- <script src="WOW-master/dist/wow.min.js"></script> -->
+
+    <script>
+        var val;
+            //   new WOW().init();
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+                menu: '#myMenu',
+                navigation: true,
+                navigationTooltips: ['首頁', '教育理念', '新惠幼幼兒園', '聯絡新惠幼'],
+                verticalCentered: false,
+                afterLoad: function (index) { 
+                    // console.log(index);
+                    if(index== "firstPage"){
+                        // console.log("firstPage");
+                        $("#information").css("display","none");
+                        advertisement();
+                    }else{
+                        $("#information").css("display","block")
+                    }
+                    if(index == "secondPage"){
+                        var box1 =  $("#infoa").attr("data-box1")
+                        // console.log(box1);
+                        $("#infoa").attr("href", box1);
+                        advertisement();
+                    }else if(index == "thirdPage"){
+                        var box2 = $("#infoa").attr("data-box2")
+                        // console.log(box2);
+                        $("#infoa").attr("href",box2);
+                        advertisement();
+                    }
+                    else if (index == "fourthPage") {
+                        var box3 = $("#infoa").attr("data-box3")
+                        // console.log(box3);
+                        $("#infoa").attr("href", box3);
+                        advertisement();
+                    }
+                }
+            });
+        });
+        $("#BuildingBlocks").vegas({
+            slides: [
+                { src: "images/BuildingBlocks1.jpg" },
+                { src: "images/BuildingBlocks2.jpg" },
+                { src: "images/BuildingBlocks3.jpg" },
+            ]
+        });
+        $("#Painted").vegas({
+            slides: [
+                { src: "images/16403272_1209906695759868_7147910085271728802_o.jpg" },
+                { src: "images/16422638_1209908022426402_2120825277354029712_o.jpg" },
+                { src: "images/16462925_1209907729093098_1592802770055867326_o.jpg" },
+            ]
+        });
+        $("#art").vegas({
+            slides: [
+                { src: "images/art01.jpg" },
+                { src: "images/art02.jpg" },
+            ]
+        });
+        
+        $(".adxx").click(function(){
+            $(".advertisement").css("display","none");
+        })
+        function advertisement(){
+            val = Math.random()*100;
+            console.log(val);
+            if(val>=90){
+                $(".advertisement").css("display", "block");
+            }
+        }
+    </script>
+</body>
+
+</html>

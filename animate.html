@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新惠幼蒙特梭利幼兒教育事業 New Heyyow Montessori Pre-School</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        @keyframes animation {
+            0%{top:0vh;opacity: 1;}
+            30% {top:0vh;opacity: 1;}
+            40% {top:100vh;opacity: 1;}
+            41%{top:100vh;opacity: 0;}
+            42%{top:-100vh;opacity: 0;}
+            80%{top:-100vh;opacity: 1;}
+            90% {top:0vh;opacity: 1;}
+            100% {top:0vh;opacity: 1;}
+        }
+        @keyframes big {
+            0% {transform: scale(1.01);opacity: 1;}
+            12.5% {transform: scale(1.025);opacity: 1;}
+            22.5% {transform: scale(1.045);opacity: 1;}
+            25% {transform: scale(1.01);opacity: 0;}            
+        } 
+        /* 版面設定 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial,"微軟正黑體" ,Helvetica, sans-serif
+        }
+        li{
+            list-style: none;
+        }
+        .flex{
+            display: flex;
+        }
+        .flex1{
+            flex:1;
+        }
+        li{
+            text-decoration: none;
+        }
+        /* 版面設定結束 */
+        /* 主要輪播 */
+        header{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;          
+            position: absolute;
+            top:0;
+            transition: all .5s;
+        }
+        
+        .main_slide{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .main_slide ul
+        {   
+            width: 100%;
+            height: 100vh;
+            top: 0vh;
+            left: 0;
+            transition: all .5s;
+            position: relative;
+        }
+        .main_slide ul li{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            animation: big 20s linear infinite ;
+            opacity: 0;
+        }
+        .main_slide ul li img{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .main_slide li:nth-child(4){
+            animation-delay: 0;
+        }
+        .main_slide li:nth-child(3){
+            animation-delay: 5s;
+        }
+        .main_slide li:nth-child(2){
+            animation-delay: 10s;
+        }
+        .main_slide li:nth-child(1){
+            animation-delay: 15s;
+        }
+        .col{
+            width: 100%;
+            height: 100vh;
+            background: #e58425;    
+            position:absolute;
+            top:-100vh;
+            animation: animation 5s linear infinite;
+        }
+        .mainh5{
+            font-size: 100px;
+            color: white;
+            position: relative;
+            top:40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /* 置中 */
+            text-align: center;
+            font-family: 'Indie Flower', cursive;
+            user-select: none;
+            /* 不可點文字 */
+        }
+        .movebox{
+            height: 100vh;
+            width: 30px;
+            position: absolute;
+            right: 0;
+        }
+        .down{
+            width: 100px;
+            height: 100px;
+            color:#fff;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            cursor:pointer;
+        }
+        .move{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top:0;
+            margin-top: -15px; 
+        }
+        /* 主要輪播結束 */
+        .btn{
+            width: 100%;
+            height: 110vh;
+        }
+        .section1{
+            width: 100%;
+            height: 200vh;
+            background: url(images/bg_05.jpg) 0 0 no-repeat;
+            background-size: cover;
+            position: fixed;
+            z-index: -1;
+        }
+      
+
+        .title{
+        font-size: 26px;
+        text-align: center;
+        margin: 30px 0;
+      
+    }
+    /* -----------------------------園長與教學理念--------------------- */
+    .section2{
+        width: 90%;
+        /* background: lightcoral; */
+        /* height: 200px; */
+        margin: 0 auto;
+      
+        /* display: flex; */
+
+    }
+    .director{
+        flex: 1;
+        /* background: lightblue; */
+         justify-content: center;
+          /* align-items: center; */
+    }
+    .idea{
+        flex: 1;
+        /* background: lawngreen; */
+    }
+    .director img{
+        width: 90%;
+        /* align-items: center; */
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+       
+    }
+    .font_size{
+        font-size: 22px;
+        font-weight: 700;
+    }
+    p{
+        line-height: 30px;
+    }
+   
+    /* -----------------------------校園生活--------------------- */
+    .slide_wrap{
+            width:90%;
+            height:80vh;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide_wrap img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+        .slide_wrap ul.slides{
+            transition: all .5s;
+            height:80vh;
+            width:300%;;
+            display: flex;
+            position: absolute;
+            left:0px;
+            /* overflow: hidden; */
+        }
+        .slides li{
+            width:100%;        
+        }
+        .pages{
+            position: absolute;
+            bottom:10px;
+            left:0;
+            width:100%;
+            height:20px;
+            display: flex;
+            justify-content: center;
+        }
+        .pages li{
+            width:24px;
+            height: 10px;
+            border:1px solid #fff;
+            margin: 0 4px;
+        }
+        .pages li:hover{
+            background: #fff;
+        }
+        .arrow{
+            font-size: 32px;
+            color:#fff;
+            position: absolute;
+            z-index: 10;
+            /* top:50%; */
+            height: 100%;
+            width:40px;
+            opacity: .6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .arrow:hover{
+            opacity: 1;
+            background: rgba(0,0,0,.5);
+        }
+        .arrow_left{
+            left: 0px;
+        }
+        .arrow_right{
+            right: 0px;
+        }
+        .arrow path{
+            fill:#fff;
+        }
+
+ /* -----------------------------聯絡--------------------- */
+ .white{
+     background: url(images/bg_08.jpg);
+ }
+    .cm{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .connection{
+        flex: 1;
+    }
+    .map{
+        flex: 1;
+    }
+    .connection p{
+        line-height: 40px;
+    }
+    .caution{
+        margin: 20px;
+        width: 60%;
+        display: block;
+        margin: 10px auto;
+    }
+    .caution img{
+        width: 100%;
+        border-radius: 20px;
+        /* margin: 0 auto; */
+    }
+    .map iframe{
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        height: 40vh;
+    }
+    .footer{
+        clear: both;
+        width: 100%;
+        text-align: center;
+        margin: 30px 0 0 0;
+        /* background: orange; */
+}
+.footer p{
+   padding: 20px;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="main_slide">
+            <ul>
+                
+                <li>
+                    <img src="images/A20111208174341.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/A20111215143519.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/A20111215143642.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/A20111215143822.jpg" alt="">
+                </li>
+                <div class="col"></div>
+                <h5 class="mainh5">Welcome to New Heyyow Montessori Pre-School</h2>
+                <a class="down"><img src="images/chevron-down.svg" alt=""></a>
+            </ul>
+        </div>
+    </header>
+    <section class="section1">       
+         
+    </section>
+    <section class="btn">           
+    </section>
+
+<div class="white">
+<section class="title">
+    <h2>新惠幼園長與教學理念</h2>
+</section>
+<section class="section2  flex">
+    <div class="director">
+        <img src="images/A20180119110704.jpg" alt="">
+    </div>
+    <div class="idea">
+        <p>
+            <span class="font_size">教育宗旨：</span>
+            <br> 以信任和尊重的態度，依自然成長之法則，在有利於其建構自我心智的紀律下，給予孩子有選擇及重覆工作的自由，以幫助孩子正常發展。
+            <br>
+            <span class="font_size">教育精神：</span>
+            <br> 以謙虛的心及持續不斷的求知欲，從愛孩子、尊重孩子的角度出發，幫助孩子獨立完成每一件事。
+            <br>
+            <span class="font_size">教育目標：</span>
+            <br> 提供合乎兒童興趣且能促使他們專注的活動動機，以達到正常化─自發的紀律、持久而快樂的工作、助人憫人的社會情操。
+            <br>
+            <span class="font_size">師資團隊：</span>
+            <br> 二十年辦理幼兒教學經驗，每班編制一位主教老師及一位助理，均具幼教專業訓練基礎，主教老師並經650小時的蒙特梭利專業培訓結業，擁有蒙特梭利合格教師證書。
+        </p>
+    </div>
+</section>
+
+</div>
+        
+        <section class="title">
+            <h2>校園生活</h2>
+        </section>
+    <div class="slide_wrap">
+        <ul class="slides">
+            <li>
+                <img src="images/16403272_1209906695759868_7147910085271728802_o.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/16422638_1209908022426402_2120825277354029712_o.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/16462925_1209907729093098_1592802770055867326_o.jpg" alt="">
+            </li>
+          
+        </ul>
+        <ul class="pages">
+            <li></li>
+            <li></li>
+            <li></li>
+            <!-- <li></li> -->
+        </ul>
+        <a class="arrow arrow_left" id="left">
+            <i class="fas fa-angle-left"></i>
+        </a>
+        <a class="arrow arrow_right" id="right">
+            <i class="fas fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="white">
+        <section class="title">
+            <h2>聯絡新惠幼</h2>
+        </section>
+        <section class="flex cm">
+            <div class="connection">
+        
+                <p>
+                    <span class="font_size">服務專線：</span>02-29209603
+                    <br>
+                    <span class="font_size">傳真專線：</span>02-22316947
+                    <br>
+                    <span class="font_size">惠幼地址：</span>234 新北市永和區保安路252巷2號1.2樓(鄰近仁愛公園)
+                    <br>
+                    <span class="font_size">FB 粉絲團：</span>
+                    <a class="astyle" href="https://www.facebook.com/newheyyow?ref=hl" target="_blank">https://www.facebook.com/newheyyow?ref=hl</a>
+                    <br>
+                    <span class="font_size"> Heyyow Montessori (惠幼):</span>heyyow@ms59.hinet.net
+                    <br>
+                    <span class="font_size">說明：</span>本校採預約參觀制，為了讓您充分瞭解我們的教學理念及課程安排，請您來電預約專屬參觀時間，(每場預計50分鐘），歡迎您的蒞臨！
+                    <br>
+                </p>
+                <a href="" class="caution">
+                    <img src="images/caution.gif" alt="">
+                </a>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6294789244116!2d121.50382211554337!3d25.01270318398231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c43167028f%3A0x7b7967613e976e4!2z5paw5oOg5bm85omY5YWS5omA!5e0!3m2!1szh-TW!2stw!4v1519608283110"
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </div>
+
+
+      
+
+
+
+        <footer class="footer">
+            <p>Copyright &copy; 2018 Heyyow All Rights Reserved. 電話：02-29209603 02-29238779 地址：新北市永和區保安路252巷2號1.2樓</p>
+        </footer>
+
+    
+
+
+    <script src="js/jquery-3.3.1.js"></script></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+    crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+    crossorigin="anonymous"></script>
+
+    <script>
+        $(window).scroll(function(){
+            var top = $(window).scrollTop();
+            console.log(top);
+            if(top>1){
+              $("header").css("top","-100vh")
+            }
+            else if(top==0){
+              $("header").css("top", "0")
+            }
+        })
+        $(".down").click(function(){
+            $(window).scrollTop(100);
+        })
+
+
+
+          var slideNum = 0;
+            var sildeCount = $(".slides li").length;
+            console.log(sildeCount)
+
+
+            $(".pages li").eq(0).css("background", "#fff");
+            $(".pages li").hover(function () {
+                slideNum = $(this).index();
+                moveSlide(slideNum);
+            });
+
+            $("#left").click(function () {
+                slideNum--;
+                if (slideNum < 0) slideNum = sildeCount - 1;
+                moveSlide(slideNum);
+            });
+            $("#right").click(function () {
+                slideNum++;
+                if (slideNum >= sildeCount) slideNum = 0;
+                moveSlide(slideNum);
+            });
+
+            function moveSlide(slideNum) {
+                var slideMove = 0 - slideNum * 100+"%";
+                $(".pages li").eq(slideNum).css("background", "#fff").siblings().css("background", "transparent");
+                $(".slides").css("left", slideMove);
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fullPage/jquery.fullPage.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+        }
+        .box1{
+            background: aqua;
+        }
+        .box2{
+            background: blueviolet;
+        }
+        .box3{
+            background: brown;
+        }
+        .nav{
+            width: 100%;
+            height: 100px;
+            background: forestgreen;
+            position: fixed;
+            top:0;
+            left:0;
+            display: flex;
+        }
+        .nav a{
+            margin: 20px;
+            font-size: 30px;
+            color: floralwhite;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+    <div class="box box1 section" id="box0"></div>
+    <div class="box box2 section" id="box1"></div>
+    <div class="box box3 section" id="box2"></div>
+    </div>
+    <div class="nav">
+       <div><a href="#box0" class="menu">box0</a></div>
+       <div><a href="#box1" class="menu">box1</a></div>
+       <div><a href="#box2" class="menu">box2</a></div>
+    </div>
+    <script src="js/jquery-3.3.1.js"></script></script>
+    <script src="fullPage/jquery.fullPage.js"></script>
+    <script>
+        $(".menu").click(function(){
+            var menu = $(this).parent().index();
+            var box = $(this).attr("href");
+            $("html , body").animate({
+                scrollTop:  $(box).offset().top
+            },800)
+        })
+             var box1 = $(".box2").offset().top;
+                console.log(box1);
+    </script>
+    <script>
+         $(document).ready(function () {
+                $('#fullpage').fullpage({
+                   
+                });
+            });
+    </script>
+</body>
+</html>

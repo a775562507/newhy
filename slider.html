@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* 版面設定 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        /* 版面設定結束 */
+
+        /* 主要輪播 */
+        .header{
+            width: 100%;
+            height: 100vh;
+            /* background: brown; */
+        }
+        .main_slide{
+            width: 100%;
+            height: 100vh;
+            /* background: blueviolet; */
+            position: relative;
+            overflow: hidden;
+        }
+        .main_slide ul
+        {   
+            width: 100%;
+            height: 300vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+        }
+        .main_slide ul li{
+            width: 100%;
+            height: 100vh;
+        }
+        .main_slide ul li img{
+            width: 100%;
+            height: 100vh;
+        }
+        .movebox{
+            height: 100vh;
+            width: 30px;
+            position: absolute;
+            /* background: blue; */
+            right: 0;
+        }
+        .move{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top:50%;
+            margin-top: -15px; 
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="main_slide">
+            <ul>
+                <li>
+                    <img src="images/A20111208174341.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/A20111215143519.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/A20111215143642.jpg" alt="">
+                </li>
+            </ul>
+            <div class="movebox">
+                <div class="move"></div>
+            </div>
+            
+        </div>
+    </header>
+    
+
+
+    <script src="js/jquery-3.3.1.js"></script></script>
+    <script>
+        var num = 0;
+        var slidenum = $("ul li").length;
+        // 計算圖片數量
+        $(".movebox").click(function(){            
+            num++
+            if (num == slidenum) {
+                num = 0;
+            }
+            var num2 = -1 * num * 100 + "%";
+            $(".main_slide ul").css("top", num2);
+        })
+
+    </script>
+</body>
+</html>

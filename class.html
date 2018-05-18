@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新惠幼蒙特梭利幼兒教育事業 New Heyyow Montessori Pre-School</title>
+        <link rel="stylesheet" href="vegas/vegas.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <style>
+          @keyframes round {
+    10% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    50% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    60% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+     }
+@keyframes textani {
+            0% {
+                left: -150px;
+                transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+         
+            /* 40% {
+                left: 120%;
+                transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            } */
+            100% {
+                left: 120%;
+                transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+        *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Arial, "微軟正黑體", Helvetica, sans-serif;
+        /* background: orange; */
+        position: relative;
+    }
+    li{
+        list-style: none;
+    }
+    .flex{
+        display: flex;
+    }
+            .flexdirection {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+    .header1{
+        width: 100%;
+      background: orange;
+      position: fixed;
+      top:0;
+      z-index: 5;
+     transition: all .5s;
+      box-shadow: 0 2px 10px black;
+    }
+    .header1.topmenu{
+         transform: translateY(-100%)
+    }
+    .logo{
+        flex: 1;
+        /* background: brown; */
+    }
+    .menu{
+        flex: 7;
+        /* background: burlywood; */
+        }
+    .fb{
+        flex: 1;
+        /* background: chocolate; */
+          justify-content: flex-end;
+         align-items: center;
+    }
+    .logo a{
+        display: block;
+    }
+    .logo img{
+       width:  100%;
+       /* margin: 10px; */
+       margin: 10px 0 10px 10px;
+    }
+    .menu ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        }
+    .menu ul li a{
+        text-decoration: none;
+        color: black;
+        padding: 20px;
+        /* margin: 0 10px 0 0; */
+        font-size: 24px;
+        transition: all .5s;
+        font-weight: 700;
+    }
+
+    .menu ul li a:hover{
+       background: #ff8000;
+       /* border-radius: 20px; */
+       /* border-bottom: 3px solid #000000; */
+       border-radius: 20px;
+    } 
+    .menu ul li{
+        /* margin: 20px; */
+    }
+    .left_menu{
+        margin-left: 30px;
+        /* background: #ff8000; */
+        border-radius: 20px;
+    }
+    .left_menu2{
+            background: #ff8000;
+             border-radius: 20px;
+    }
+   
+    .fb img{
+        width: 50px;
+        background: #fff;
+        border-radius: 10px;
+        justify-content: flex-end;
+        margin-right: 20px;
+        /* align-items: center; */
+    }
+    .button{
+       display: none;
+    }
+      
+     .mobile{
+         display: none;
+     } 
+    /* ----------------------------主圖--------------------- */
+
+    .section1{
+        width: 100%;
+        position: relative;
+        /* z-index: 3; */
+    }
+    .section1 img{
+        width: 100%;
+       /* position: absolute; */
+    }
+    .section11{
+        width: 100%;
+        /* z-index: 3; */
+        /* position: relative; */
+    }
+    .section11 img{
+        width: 100%;
+       position: absolute;
+       top:0;
+       opacity: 0;
+    filter: alpha(opacity=0);
+    animation: round 10s linear infinite;
+       /* z-index: 3; */
+    }
+    .imgdelay{
+         animation-delay: 5s;
+    }
+    .title{
+        font-size: 26px;
+        text-align: center;
+        margin: 30px 0;
+        /* color: #2f62f2;
+        background: orange; */
+    }
+
+ .cm{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .connection{
+        flex: 1;
+    }
+    .map{
+        flex: 1;
+    }
+    .connection p{
+        line-height: 40px;
+    }
+    .caution{
+        margin: 20px;
+        width: 60%;
+        display: block;
+        margin: 10px auto;
+    }
+    .caution img{
+        width: 100%;
+        border-radius: 20px;
+        /* margin: 0 auto; */
+    }
+    .map iframe{
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        height: 40vh;
+    }
+
+.footer{
+        clear: both;
+        width: 100%;
+        text-align: center;
+        margin: 30px 0 0 0;
+        background: orange;
+}
+.footer p{
+   padding: 20px;
+}
+
+.flexdirection{
+    display: flex;
+    flex-direction: column;
+}
+ .subject {
+            flex: 8;
+            display: flex;
+        }
+
+        .BuildingBlocks {
+            flex: 1;
+            background: violet;
+           
+        }
+        
+        .shadow{
+            box-shadow: 0 0 10px black;
+        }
+        .Painted {
+            flex: 1;
+            background: teal;
+        }
+
+        .art {
+            flex: 1;
+            background: slateblue;
+        }
+
+        .boxbor {
+            margin: 0 20px 50px;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, .1)
+        }
+
+        .imgborder {
+            border-radius: 20px ;
+             height: 800px;
+        }
+
+        .text {
+            align-items: center;
+            justify-content: center;
+            color: black;
+        }
+
+        .BuildingBlocks01 {
+            width: 100%;
+            /* flex: 1; */
+            color: black;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           position: relative;
+        z-index: 5;
+        overflow: hidden;
+        }
+       .BuildingBlocks01:after{
+        left: -150px;
+        top:-150px;
+        content:"";
+        background: rgba(255,255,255,.2);
+        position: absolute;;
+         width: 30px;
+        height: 500px;
+        z-index: 10;
+        transform: rotate(50deg);
+         transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+         animation: textani 2s cubic-bezier(0.19, 1, 0.22, 1) infinite ;
+    }
+   
+        .BuildingBlocks02 {
+            flex: 4;
+            font-size: 24px;
+            padding: 0 10px;
+        }
+
+    
+
+     @media screen and (max-width:1100px){
+          .subject {
+            /* display: flex; */
+            flex-direction: column;
+        }
+     .header1{
+            height: 60px;
+             position: fixed;
+            top:0;
+        }
+        .section1{
+            margin-top: 60px;
+        }
+        .logo{
+            width: 20%;
+        }
+        .logo a{
+            width: 100%;
+        }
+        .logo img{
+            display: block;
+            height: 60px;
+            margin: 0;
+        }
+        .button{
+            position: absolute;
+            width: 50px;
+             height: 50px;
+            display: block;
+            margin: 5px 10px;
+            right: 10px;
+            z-index: 100;
+            
+        }
+        .button a{
+            width: 100%;
+            display: block;
+        }
+        .button img{
+            width: 100%;
+        }
+        .menu{
+            display: none;
+        }
+        .fb{
+            display: none;
+        }
+     .title{
+         font-size: 22px;
+     }
+     .mobile{
+         display: block;
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         right: -100%;;
+         z-index: 50;
+         background: rgba(0,0,0,.8);
+         transition: all .5s;
+         
+     }
+     .mobile li{
+         
+         width: 100%;
+         margin: 50px 0;
+     }
+     .mobile li a{
+         width: 100%;
+         display: block;
+         text-align: center;
+         text-decoration: none;
+         color: #fff;
+         font-size: 50px;
+     }
+     
+     .menux{
+         width: 50px;
+         height: 30px;
+         display: block;
+         
+         /* background: forestgreen; */
+     }
+     .menux img{
+         float: right;
+         margin-right: 30px;
+         margin-top:-30px;
+width: 50px;
+ height: 50px;
+     }
+          .cm{
+            flex-direction: column;
+             width: 100%;
+           
+        }
+        .connection{
+           margin: 10px;
+        }
+        .map{
+        width: 100%;
+        }
+      .floatmenu{
+            display: none;
+        }
+    .imgborder{
+        height: 300px;
+    }
+
+     }
+   
+
+    
+    </style>
+</head>
+<body>
+    <header class="flex header1">
+    
+        <div class="logo">
+            <a href="index2.html">
+                <img src="images/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="menu flex">
+            <ul class="flex">
+                <li>
+                    <a href="index2.html" class="left_menu">首頁</a>
+                </li>
+                <li>
+                    <a href="about.html">關於新惠幼</a>
+                </li>
+                <li>
+                    <a href="class.html"  class="left_menu2">新惠幼幼兒園</a>
+                </li>
+                <li>
+                    <a href="Information.html">聯絡新惠幼</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fb flex">
+            <figure>
+                <a href="https://www.facebook.com/newheyyow?ref=hl" target="_blank">
+                    <img src="images/FB.svg" alt="">
+                </a>
+            </figure>
+        </div>
+        <div class="button">
+            <a>
+                <img src="images/menu-button.svg" alt="">
+            </a>
+        </div>
+    
+    </header>
+    
+    <div class="mobile">
+        <ul>
+            <li class="menux">
+    
+                <img class="buttonclose" src="images/close-x.svg" alt="">
+    
+    
+            </li>
+            <li>
+                <a href="index2.html">首頁</a>
+            </li>
+            <li>
+                <a href="about.html">關於新惠幼</a>
+            </li>
+            <li>
+                <a href="class.html"  class="left_menu2">新惠幼幼兒園</a>
+            </li>
+            <li>
+                <a href="Information.html">聯絡新惠幼</a>
+            </li>
+        </ul>
+    </div>
+    
+    <section class="section1">
+        <img src="images/main工作區域-1.png" alt="">
+    </section>
+    <section class="section11">
+        <img src="images/main工作區域-1.png" alt="">
+        <img class="imgdelay" src="images/mian02.png" alt="">
+    </section>
+
+
+
+
+        <section class="title wow bounceInUp">
+            <h2>新惠幼幼兒園</h2>
+        </section>
+        
+
+
+<div class="subject ">
+    <div class="BuildingBlocks boxbor flexdirection shadow  wow swing">
+        <div class="flex1 imgborder" id="BuildingBlocks"></div>
+        <div class="flex1 flexdirection text">
+            <div class="BuildingBlocks01">積木課</div>
+            <div class="BuildingBlocks02">藉由小小積木的堆疊，讓孩子開始用自己的眼睛並訓練自己的小肌肉來建構一個屬於自己的創作作品，這不僅訓練孩子空間的概念更讓孩子開始建構空間的邏輯，一個作品的完成不容易，學會欣賞其他人的作品，同儕間互相學習砥礪，提昇孩子們感知人事物的敏銳度。</div>
+        </div>
+    </div>
+    <div class="Painted boxbor flexdirection shadow wow swing">
+        <div class="flex1 imgborder" id="Painted"></div>
+        <div class="flex1 flexdirection  text">
+            <div class="BuildingBlocks01">彩繪課</div>
+            <div class="BuildingBlocks02">彩繪課程滿足幼齡階段探索世界的渴望，藉由彩繪讓他們更大膽的嘗試世界色彩的美妙，這堂課不僅只有用筆，我們用更自己的全身來大膽嘗試的世界之美，藉由身體及肢體伸展，孩子們小小的心靈裡，更有著大大的勇氣。</div>
+        </div>
+    </div>
+    <div class="art boxbor flexdirection shadow wow swing">
+        <div class="flex1 imgborder" id="art"></div>
+        <div class="flex1 flexdirection  text">
+            <div class="BuildingBlocks01">美術課</div>
+            <div class="BuildingBlocks02">藉由不同顏色的筆，開始描繪自己的想像力，在一張圖畫紙裡，可以運用自己的心情、感受來表達自己的想法，不再只是畫花畫草，我們用不同顏色的筆來琢磨自己的感受更能讓孩子們從畫中抒發自己的情感，一窺孩子內在豐富的世界。</div>
+        </div>
+    </div>
+</div>
+
+
+        <footer class="footer">
+            <p>Copyright &copy; 2018 Heyyow All Rights Reserved. 電話：02-29209603 02-29238779 地址：新北市永和區保安路252巷2號1.2樓</p>
+        </footer>
+
+        <script src="js/jquery-3.3.1.js"></script></script>
+            <script src="http://zeptojs.com/zepto.min.js"></script>
+            <script src="vegas/vegas.min.js"></script>
+            <!-- <script src="WOW-master/dist/wow.min.js"></script> -->
+        <script>
+           var scrollheight = 0;
+            var scrolltop = 0;
+            //  new WOW().init();
+            $(window).scroll(function () {
+                scrollheight = scrolltop;
+                scrolltop = $(this).scrollTop();
+
+
+                if (scrolltop > scrollheight) {
+                    $(".header1").addClass("topmenu");
+                }
+                else {
+                    $(".header1").removeClass("topmenu");
+                }
+                console.log("scrolltop=" + scrolltop);
+                console.log("scrollheight=" + scrollheight);
+            })
+            $(".button").click(function () {
+                $(this).css("display", "none")
+                $(".mobile").css("right", "0")
+            })
+            $(".buttonclose").click(function () {
+                $(".button").css("display", "block")
+                $(".mobile").css("right", "-100%")
+            })
+
+
+             $("#BuildingBlocks").vegas({
+                    slides: [
+                        { src: "images/BuildingBlocks1.jpg" },
+                        { src: "images/BuildingBlocks2.jpg" },
+                        { src: "images/BuildingBlocks3.jpg" },
+                    ]
+                });
+                $("#Painted").vegas({
+                    slides: [
+                        { src: "images/16403272_1209906695759868_7147910085271728802_o.jpg" },
+                        { src: "images/16422638_1209908022426402_2120825277354029712_o.jpg" },
+                        { src: "images/16462925_1209907729093098_1592802770055867326_o.jpg" },
+                    ]
+                });
+                $("#art").vegas({
+                    slides: [
+                        { src: "images/art01.jpg" },
+                        { src: "images/art02.jpg" },
+                    ]
+                });
+        </script>
+</body>
+</html>

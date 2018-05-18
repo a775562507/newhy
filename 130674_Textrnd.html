@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .box a {
+            font-size: 60px;
+            color: #CCC;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <a href="" data-word="Apple"></a>
+            <a href="" data-word="Banana"></a>
+            <a href="" data-word="Orange"></a>
+            <a href="" data-word="Strawberry"></a>
+        </div>
+    </div>
+    <!-- container -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            var count = [], Num = 0, Readword = [], lengthNum = $(".box a").length;
+
+            ////取值
+            $(".box a").each(function () {
+
+                var text = $(this).attr("data-word");
+                var length = parseInt(text.length);
+                var list = text.split('');
+                count.push(text);
+                count[Num] = list;
+                Num++;
+            })
+            ////二維陣列給值
+            for (i = 0; i < lengthNum; i++) {
+                ////closure 傳叁
+                (function (num) {
+
+                    setTimeout(function () {
+                        Readword[num] = ""
+                        var listlength = count[num].length
+                        ////取亂數英文數字
+                        var takeRandom = Math.random().toString(36).substr(2).slice(0, listlength);
+                        var rows = 0;
+                        // console.log(takeRandom);
+
+                        for (var k = listlength - 1; k >= 0; k--) {
+                            (function (nums, rows) {
+
+                                setTimeout(function () {
+                                    ////取每行字數的亂碼
+                                    var takeRandoms = Math.random().toString(36).substr(
+                                        2).slice(0, nums);
+                                    ////亂數從整行到0    
+                                    var lists = takeRandoms.split('');
+                                    ////正確值從0到整行
+                                    Readword[num] += count[num][rows]
+                                    ////同步合成
+                                    var combine = Readword[num] + lists
+                                    $(".box a").eq(num).text(combine)
+                                    // console.log(rows);
+                                }, 100 * (rows));////每行的每個字母時間差
+                            })(k, rows)
+                            rows++;
+                            // console.log(k);
+                        }
+                    }, 530 * (i + 1));////每"行"的時間差
+                })(i);
+            }
+            // console.log(count)
+
+        })
+    </script>
+</body>
+
+</html>
